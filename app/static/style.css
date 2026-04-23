@@ -1,0 +1,226 @@
+:root {
+    --bg: #f4efe6;
+    --panel: #fffdf8;
+    --panel-border: #e6dccd;
+    --text: #1f2937;
+    --muted: #6b7280;
+    --accent: #c56a2d;
+    --accent-dark: #9f4f1a;
+    --soft: #f3e2d3;
+    --danger: #b9382f;
+    --success: #1f7a50;
+    --shadow: 0 16px 40px rgba(76, 54, 37, 0.12);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background:
+        radial-gradient(circle at top left, rgba(197, 106, 45, 0.18), transparent 30%),
+        linear-gradient(135deg, #f8f3eb, #efe5d8);
+    color: var(--text);
+}
+
+.page {
+    width: min(1100px, calc(100% - 32px));
+    margin: 40px auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+}
+
+.card {
+    background: var(--panel);
+    border: 1px solid var(--panel-border);
+    border-radius: 24px;
+    padding: 24px;
+    box-shadow: var(--shadow);
+}
+
+.hero h1,
+.list-header h2 {
+    margin: 0;
+}
+
+.eyebrow {
+    margin: 0 0 8px;
+    color: var(--accent-dark);
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+}
+
+.subtitle {
+    margin: 12px 0 0;
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+.todo-form {
+    margin-top: 20px;
+    display: grid;
+    gap: 12px;
+}
+
+.todo-form label {
+    font-weight: 600;
+}
+
+.todo-form input[type="text"],
+.todo-form textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #d7c8b5;
+    border-radius: 14px;
+    font: inherit;
+    background: #fff;
+}
+
+.todo-form input[type="text"]:focus,
+.todo-form textarea:focus {
+    outline: 2px solid rgba(197, 106, 45, 0.25);
+    border-color: var(--accent);
+}
+
+.checkbox-row {
+    display: inline-flex;
+    gap: 10px;
+    align-items: center;
+    margin-top: 4px;
+}
+
+.actions,
+.list-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+button {
+    border: none;
+    border-radius: 999px;
+    padding: 12px 18px;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.15s ease, opacity 0.15s ease, background 0.15s ease;
+}
+
+button:hover {
+    transform: translateY(-1px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+button:not(.secondary):not(.danger) {
+    background: var(--accent);
+    color: #fff;
+}
+
+.secondary {
+    background: var(--soft);
+    color: var(--text);
+}
+
+.danger {
+    background: #fde4df;
+    color: var(--danger);
+}
+
+.hidden {
+    display: none;
+}
+
+.status-message {
+    margin: 18px 0;
+    color: var(--muted);
+}
+
+.todo-list {
+    display: grid;
+    gap: 14px;
+}
+
+.todo-item {
+    border: 1px solid var(--panel-border);
+    border-radius: 18px;
+    padding: 18px;
+    background: #fff;
+}
+
+.todo-item.completed {
+    background: #f4fbf7;
+    border-color: #c9e5d7;
+}
+
+.todo-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.todo-title {
+    margin: 0;
+    font-size: 20px;
+}
+
+.todo-item.completed .todo-title {
+    color: var(--success);
+    text-decoration: line-through;
+}
+
+.todo-description {
+    margin: 10px 0 0;
+    color: var(--muted);
+    line-height: 1.5;
+    white-space: pre-wrap;
+}
+
+.todo-badge {
+    padding: 6px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 700;
+    background: #fef1e8;
+    color: var(--accent-dark);
+}
+
+.todo-item.completed .todo-badge {
+    background: #ddf4e8;
+    color: var(--success);
+}
+
+.todo-buttons {
+    margin-top: 16px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 720px) {
+    .page {
+        width: min(100% - 20px, 1100px);
+        margin: 20px auto;
+    }
+
+    .card {
+        padding: 18px;
+        border-radius: 20px;
+    }
+
+    .actions,
+    .list-header,
+    .todo-top {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}

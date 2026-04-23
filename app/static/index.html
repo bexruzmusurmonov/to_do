@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <main class="page">
+        <section class="card">
+            <div class="hero">
+                <p class="eyebrow">FastAPI Todo</p>
+                <h1>Simple Todo Frontend</h1>
+                <p class="subtitle">
+                    HTML, CSS, and vanilla JavaScript bilan yozilgan sodda CRUD sahifa.
+                </p>
+            </div>
+
+            <form id="todo-form" class="todo-form">
+                <input type="hidden" id="todo-id">
+
+                <label for="title">Title</label>
+                <input id="title" name="title" type="text" placeholder="Masalan: Python darsini tugatish" required>
+
+                <label for="description">Description</label>
+                <textarea id="description" name="description" rows="4" placeholder="Qo'shimcha izoh yozing"></textarea>
+
+                <label class="checkbox-row" for="completed">
+                    <input id="completed" name="completed" type="checkbox">
+                    <span>Completed</span>
+                </label>
+
+                <div class="actions">
+                    <button type="submit" id="save-button">Save Todo</button>
+                    <button type="button" id="cancel-button" class="secondary hidden">Cancel Edit</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="card">
+            <div class="list-header">
+                <div>
+                    <p class="eyebrow">Todo List</p>
+                    <h2>Your Tasks</h2>
+                </div>
+                <button type="button" id="refresh-button" class="secondary">Refresh</button>
+            </div>
+
+            <p id="status-message" class="status-message">Loading todos...</p>
+            <div id="todo-list" class="todo-list"></div>
+        </section>
+    </main>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>
