@@ -1,13 +1,13 @@
 # FastAPI Todo CRUD App
 
-A beginner-friendly Todo API built with:
+Oson to_do app yaratish:
 
 - FastAPI
 - PostgreSQL
 - SQLAlchemy
 - Docker
 
-## Project Structure
+## Project strukturasi
 
 ```text
 todo/
@@ -27,7 +27,7 @@ todo/
 `-- requirements.txt
 ```
 
-## What Each File Does
+## Fayllari ichki strukturasi
 
 - `app/database.py` sets up the database connection and session.
 - `app/models.py` defines the SQLAlchemy database table.
@@ -36,7 +36,7 @@ todo/
 - `app/routers/todos.py` contains API routes.
 - `app/main.py` creates the FastAPI app and connects everything together.
 
-## Run Locally
+## Local run qilish
 
 1. Create and activate a virtual environment.
 2. Install the requirements:
@@ -45,13 +45,13 @@ todo/
 pip install -r requirements.txt
 ```
 
-3. Copy the example environment file:
+3. Copy bu examole faylni:
 
 ```bash
 copy .env.example .env
 ```
 
-4. Make sure PostgreSQL is running and a database named `todo_db` exists.
+4. PostgreSQL ishlayotganiga va todo_db nomli database borligini tekshir.
 5. Start the app:
 
 ```bash
@@ -63,17 +63,17 @@ uvicorn app.main:app --reload
 - Swagger UI: `http://127.0.0.1:8000/docs`
 - ReDoc: `http://127.0.0.1:8000/redoc`
 
-## Run With Docker
+## Run Wqilish  Docker bilan
 
 ```bash
 docker compose up --build
 ```
 
-Then open `http://127.0.0.1:8000/docs`
+keyin ochish `http://127.0.0.1:8000/docs`
 
-## Example Request Body
+## Namuna so'rov uchun
 
-### Create a Todo
+### yaratish Todo
 
 ```json
 {
