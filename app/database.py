@@ -9,6 +9,8 @@ except ImportError:
     # If python-dotenv is not installed yet, continue without loading .env.
     def load_dotenv():
         return None
+    
+    #fcg
 
 # Load variables from a local .env file if one exists.
 load_dotenv()
